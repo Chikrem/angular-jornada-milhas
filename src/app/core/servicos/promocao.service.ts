@@ -5,7 +5,10 @@ import { Promocao } from '../types/type';
 import { environment } from 'src/environments/environment';
 
 
-// O Singleton é um design pattern que visa garantir que apenas uma única instância de uma determinada classe exista em todo o sistema. Ele é útil quando é necessário controlar e restringir o número de instâncias de uma classe específica, garantindo que todos os componentes que dependem dela acessem a mesma instância compartilhada. E para configurar um serviço para ser um Singleton, pode fornecer no nível raiz da hierarquia de injeção de dependência ou usando o modificador providedIn: 'root'
+// O Singleton é um design pattern que visa garantir que apenas uma única instância de uma determinada classe exista em todo o sistema.
+// Ele é útil quando é necessário controlar e restringir o número de instâncias de uma classe específica, garantindo que todos os componentes que
+// dependem dela acessem a mesma instância compartilhada. E para configurar um serviço para ser um Singleton, pode fornecer no nível raiz da
+// hierarquia de injeção de dependência ou usando o modificador providedIn: 'root'
 
 @Injectable({
   providedIn: 'root'

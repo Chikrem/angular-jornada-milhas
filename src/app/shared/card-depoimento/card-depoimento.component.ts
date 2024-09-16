@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './card-depoimento.component.html',
   styleUrls: ['./card-depoimento.component.scss']
 })
-
 export class CardDepoimentoComponent {
   depoimento: string = `
     Recomendo fortemente a agência de viagens Jornada.

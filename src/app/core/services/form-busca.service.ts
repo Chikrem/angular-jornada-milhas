@@ -8,7 +8,7 @@ export class FormBuscaService {
 
   formBusca: FormGroup;
 
-  constructor() { 
+  constructor() {
 
     this.formBusca = new FormGroup({
       somenteIda: new FormControl(false),
@@ -25,3 +25,4 @@ export class FormBuscaService {
     return control as FormControl;
   }
 }
+

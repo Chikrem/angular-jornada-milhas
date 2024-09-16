@@ -2,6 +2,8 @@
   max-width: 320px;
   background-color: #FEF7FF;
   border: none;
+  gap: 16px;
+  margin: 12px;
   img {
     max-width: 56px;
     max-height: 56px;
@@ -17,9 +19,5 @@
       line-height: 24px;
     }
   }
-  mat-card-content {
-    display: flex;
-    align-items: start;
-    gap: 16px;
-  }
+
 }

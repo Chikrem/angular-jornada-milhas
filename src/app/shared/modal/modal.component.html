@@ -2,7 +2,12 @@
   <h1 mat-dialog-title>Viajante</h1>
   <div mat-dialog-content>
     <div class="selecao-idade">
-      <ul>
+
+      <app-seletor-passageiro titulo="Adultos" subtitulo="(Acima de 12 anos)"/>
+      <app-seletor-passageiro titulo="Crianças" subtitulo="(Entre 2 e 11 anos)"/>
+      <app-seletor-passageiro titulo="Bebês" subtitulo="(Até 2 anos)"/>
+
+      <!-- <ul>
         <li><strong>Adultos</strong></li>
         <li>(Acima de 12 anos)</li>
         <li>
@@ -28,7 +33,7 @@
           <span>1</span>
           <app-botao-controle operacao="incrementar"></app-botao-controle>
         </li>
-      </ul>
+      </ul> -->
     </div>
 
     <div class="selecao-categoria">

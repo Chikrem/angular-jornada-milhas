@@ -26,6 +26,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
@@ -37,6 +40,7 @@ import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { FormBaseComponent } from './shared/form-base/form-base.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     SeletorPassageiroComponent,
     DepoimentosComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    FormBaseComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,10 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatRadioModule,
+    MatDividerModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,6 +27,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
+
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
@@ -35,6 +36,7 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { LoginComponent } from './pages/login/login.component';
     DropdownUfComponent,
     SeletorPassageiroComponent,
     DepoimentosComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

@@ -11,8 +11,6 @@ import { PessoaUsuaria } from 'src/app/core/types/type';
 })
 export class CadastroComponent {
 
-   perfilComponent = false
-
    constructor(
     private formularioService: FormularioService,
     private cadastroService: CadastroService,

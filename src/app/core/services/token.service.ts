@@ -7,32 +7,31 @@ import { Injectable } from '@angular/core';
 
 // https://jwt.io/introduction
 
-const KEY: string = 'token'
+const KEY = 'token';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
-
-  constructor() { }
-
-  salvarToken(token: string){
+  salvarToken(token: string) {
     return localStorage.setItem(KEY, token)
   }
 
-  excluirToken(){
-    return localStorage.removeItem(KEY)
+  excluirToken() {
+    localStorage.removeItem(KEY)
   }
 
-  retornarToken(){
-    return localStorage.getItem(KEY) ?? ""
+  retornarToken() {
+    return localStorage.getItem(KEY) ?? ''
   }
 
-  possuiToken(){
-    return !!this.retornarToken()
+  possuiToken() {
+    return !!this.retornarToken();
   }
-
 }
+
+
+
 
 // Em aplicações web modernas, a segurança é uma preocupação fundamental.
 // Tokens são elementos essenciais para garantir a autenticação e a autorização de usuários em sistemas.

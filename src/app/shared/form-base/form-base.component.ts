@@ -13,16 +13,14 @@ export class FormBaseComponent implements OnInit{
   cadastroForm!: FormGroup;
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required);
 
-  @Input() perfilComponent = false;
+  @Input() perfilComponent: boolean = false;
   @Input() titulo: string = 'Crie sua conta';
-  @Input() textoBotao : string ='CADASTRAR';
-
-  // Precisamos saber se estamos na tela de cadastro ou na tela de perfil e uma das formas de fazer isso é utilizar uma input property.
-  // Ou seja, o componente pai vai enviar essa informação para o componente filho.
-
+  @Input() textoBotao: string = 'CADASTRAR';
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>()
   @Output() sair: EventEmitter<any> = new EventEmitter<any>()
 
+  // Precisamos saber se estamos na tela de cadastro ou na tela de perfil e uma das formas de fazer isso é utilizar uma input property.
+  // Ou seja, o componente pai vai enviar essa informação para o componente filho.
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,39 +29,36 @@ export class FormBaseComponent implements OnInit{
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
-      nome: ['Teste', Validators.required],
+      nome: [null, Validators.required],
       nascimento: [null, [Validators.required]],
-      cpf: ['Teste', [Validators.required]],
-      cidade: ['City', Validators.required],
-      email: ['teste@email.com', [Validators.required, Validators.email]],
-      senha: ['Teste', [Validators.required, Validators.minLength(3)]],
+      cpf: [null, [Validators.required]],
+      cidade: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      senha: [null, [Validators.required, Validators.minLength(3)]],
       genero: ['outro'],
       telefone: [null, Validators.required],
       estado: this.estadoControl,
-      confirmarEmail: ['teste@email.com', [Validators.required, Validators.email, FormValidations.equalTo('email')]],
-      confirmarSenha: ['Teste', [Validators.required, Validators.minLength(3), FormValidations.equalTo('senha')]],
-      aceitarTermos: [null, [Validators.requiredTrue]]
+      confirmarEmail: [null, [Validators.required, Validators.email, FormValidations.equalTo('email')]],
+      confirmarSenha: [null, [Validators.required, Validators.minLength(3), FormValidations.equalTo('senha')]],
+      aceitarTermos: [false, [Validators.requiredTrue]]
     });
 
-    if(this.perfilComponent) {
-
-      this.cadastroForm.get('aceitarTermos')?.setValidators (null)
-
+    if(this.perfilComponent){
+      this.cadastroForm.get('aceitarTermos')?.setValidators(null)
     } else {
-      this.cadastroForm.get('aceitarTermos')?.setValidators ([Validators.requiredTrue])
+      this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.requiredTrue])
+    }
 
-      this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
+    this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
 
-      this.formularioService.setCadastro (this.cadastroForm)
+    this.formularioService.setCadastro(this.cadastroForm)
   }
-  }
-
 
   executarAcao() {
-    this.acaoClique.emit()
+    this.acaoClique.emit();
   }
 
-  deslogar(){
-    this.sair.emit()
+  deslogar() {
+    this.sair.emit();
   }
 }

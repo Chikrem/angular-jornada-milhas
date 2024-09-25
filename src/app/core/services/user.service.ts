@@ -7,7 +7,6 @@ import { jwtDecode } from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
-
 export class UserService {
 
   private userSubject = new BehaviorSubject<PessoaUsuaria | null>(null);
@@ -44,5 +43,5 @@ export class UserService {
   estaLogado() {
     return this.tokenService.possuiToken();
   }
-
 }
+

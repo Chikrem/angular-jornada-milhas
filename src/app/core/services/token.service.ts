@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+
+// https://jwt.io/introduction
+
+const KEY: string = 'token'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TokenService {
+
+  constructor() { }
+
+  salvarToken(token: string){
+    return localStorage.setItem(KEY, token)
+  }
+
+  excluirToken(){
+    return localStorage.removeItem(KEY)
+  }
+
+  retornarToken(){
+    return localStorage.getItem(KEY) ?? ""
+  }
+
+  possuiToken(){
+    return !!this.retornarToken()
+  }
+
+}

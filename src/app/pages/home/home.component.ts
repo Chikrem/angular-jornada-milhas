@@ -10,8 +10,10 @@ import { PromocaoService } from 'src/app/core/services/promocao.service';
 export class HomeComponent implements OnInit {
   constructor(
     private servicoPromocao: PromocaoService,
-    private route: Router
-   ){}
+    private router: Router
+  ) {
+
+  }
   ngOnInit(): void {
     this.servicoPromocao.listar()
       .subscribe(
@@ -20,9 +22,7 @@ export class HomeComponent implements OnInit {
         }
       )
   }
-
-  navegarParaBusca(ev: any){
-    this.route.navigate(['busca'])
+  navegarParaBusca(ev: any) {
+    this.router.navigate(['busca']);
   }
-
 }

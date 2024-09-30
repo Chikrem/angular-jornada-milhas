@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { PessoaUsuaria } from '../types/type';
 import { TokenService } from './token.service';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { jwtDecode } from 'jwt-decode';
+import { BehaviorSubject } from 'rxjs';
+import { PessoaUsuaria } from '../types/type';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +10,6 @@ import { jwtDecode } from 'jwt-decode';
 export class UserService {
 
   private userSubject = new BehaviorSubject<PessoaUsuaria | null>(null);
-
-  // O BehaviorSubject funciona tanto como um observable quanto como um observer.
-  // Ou seja, ele pode tanto emitir notificações e informações quanto recebê-las.
 
   constructor(private tokenService: TokenService) {
     if(this.tokenService.possuiToken()) {
@@ -44,4 +41,6 @@ export class UserService {
     return this.tokenService.possuiToken();
   }
 }
+
+
 

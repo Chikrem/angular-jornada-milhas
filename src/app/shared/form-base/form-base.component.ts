@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormularioService } from 'src/app/core/services/formulario.service';
 import { UnidadeFederativa } from 'src/app/core/types/type';
-import { FormularioService } from './../../core/services/formulario.service';
-import { FormValidations } from './../form-validations';
+import { FormValidations } from '../form-validations';
 
 @Component({
   selector: 'app-form-base',
@@ -18,9 +18,6 @@ export class FormBaseComponent implements OnInit{
   @Input() textoBotao: string = 'CADASTRAR';
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>()
   @Output() sair: EventEmitter<any> = new EventEmitter<any>()
-
-  // Precisamos saber se estamos na tela de cadastro ou na tela de perfil e uma das formas de fazer isso é utilizar uma input property.
-  // Ou seja, o componente pai vai enviar essa informação para o componente filho.
 
   constructor(
     private formBuilder: FormBuilder,

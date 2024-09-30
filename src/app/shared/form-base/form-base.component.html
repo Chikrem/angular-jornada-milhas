@@ -54,21 +54,23 @@
                 <mat-radio-button value="outro">Prefiro não informar</mat-radio-button>
               </mat-radio-group>
             </div>
-            <mat-form-field appearance="outline">
-              <mat-label>Telefone</mat-label>
-              <input matInput formControlName="telefone" placeholder="+XX XXXX-XXXX">
-              <mat-error *ngIf="cadastroForm.get('telefone')?.errors">Telefone é obrigatório</mat-error>
-            </mat-form-field>
-            <app-dropdown-uf
-              label="Estado"
-              placeholder="Estado"
-              [control]="estadoControl">
-            </app-dropdown-uf>
-            <mat-error *ngIf="estadoControl?.errors && estadoControl?.touched">Estado é obrigatório</mat-error>
+              <mat-form-field appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input matInput formControlName="telefone" placeholder="+XX XXXX-XXXX">
+                <mat-error *ngIf="cadastroForm.get('telefone')?.errors">Telefone é obrigatório</mat-error>
+              </mat-form-field>
+            <div class="drop-container">
+              <app-dropdown-uf
+                label="Estado"
+                placeholder="Estado"
+                [control]="estadoControl">
+              </app-dropdown-uf>
+              <mat-error class="custom-error" *ngIf="estadoControl?.errors && estadoControl?.touched">Estado é obrigatório</mat-error>
+          </div>
           </div>
         </div>
       </mat-card-content>
-      <mat-divider *ngIf="perfilComponent" ></mat-divider>
+      <mat-divider *ngIf="perfilComponent"></mat-divider>
       <div class="acessoPerfil" *ngIf="perfilComponent">
         <h2>Dados de acesso</h2>
       </div>
@@ -93,16 +95,14 @@
               <mat-label>Confirmar E-mail</mat-label>
               <input matInput formControlName="confirmarEmail" placeholder="Digite seu e-mail novamente">
               <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['required']">Confirmação de E-mail é obrigatória</mat-error>
-              <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['equalTo']">E-mails não coincidem</mat-error>
               <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['email']">E-mail inválido</mat-error>
-
+              <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['equalTo']">E-mails não coincidem</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Confirmar Senha</mat-label>
               <input matInput formControlName="confirmarSenha" type="password" placeholder="Repita sua senha">
               <mat-error *ngIf="cadastroForm.get('confirmarSenha')?.errors?.['required']">Confirmação de Senha é obrigatória</mat-error>
               <mat-error *ngIf="cadastroForm.get('confirmarSenha')?.errors?.['equalTo']">Senhas não coincidem</mat-error>
-
             </mat-form-field>
           </div>
         </div>
@@ -113,10 +113,10 @@
       </mat-card-content>
       <mat-card-actions class="full-width">
         <button mat-flat-button
-          [class.perfil-button] = "perfilComponent"
           [disabled]="cadastroForm.invalid"
-          color="primary"
           (click)="executarAcao()"
+          [class.perfil-button]="perfilComponent"
+          color="primary"
         >{{ textoBotao }}
         </button>
       </mat-card-actions>

@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-
 import { BannerComponent } from "./banner/banner.component";
 import { BotaoControleComponent } from "./botao-controle/botao-controle.component";
 import { CardBuscaComponent } from "./card-busca/card-busca.component";
@@ -16,6 +15,7 @@ import { HeaderComponent } from "./header/header.component";
 import { ModalComponent } from "./modal/modal.component";
 import { SeletorPassageiroComponent } from "./seletor-passageiro/seletor-passageiro.component";
 import { MaterialModule } from "../core/material/material.module";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { MaterialModule } from "../core/material/material.module";
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     BannerComponent,

@@ -30,12 +30,12 @@ import { MatSliderModule } from '@angular/material/slider';
 
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
-import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 import { LoginComponent } from './pages/login/login.component';
+import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
+import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
@@ -51,60 +51,28 @@ import { PrecosComponent } from './shared/form-busca/filtros-complementares/prec
 import { LabelComponent } from './shared/form-busca/filtros-complementares/label/label.component';
 import { FiltrosComplementaresComponent } from './shared/form-busca/filtros-complementares/filtros-complementares.component';
 import { PassagemDestaqueComponent } from './shared/passagem-destaque/passagem-destaque.component';
+import { SharedModule } from './shared/shared.module';
+import { MaterialModule } from './core/material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    BannerComponent,
-    CardComponent,
-    ContainerComponent,
     HomeComponent,
-    FooterComponent,
-    CardBuscaComponent,
-    CardDepoimentoComponent,
-    FormBuscaComponent,
-    ModalComponent,
-    BotaoControleComponent,
     PromocoesComponent,
-    DropdownUfComponent,
-    SeletorPassageiroComponent,
     DepoimentosComponent,
     LoginComponent,
-    FormBaseComponent,
     CadastroComponent,
     PerfilComponent,
-    BuscaComponent,
-    PassagemComponent,
-    ParadasComponent,
-    CompanhiasComponent,
-    PrecosComponent,
-    LabelComponent,
-    FiltrosComplementaresComponent,
-    PassagemDestaqueComponent
+    BuscaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
+    MaterialModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatButtonToggleModule,
-    MatIconModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatDialogModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatRadioModule,
-    MatDividerModule,
-    MatCheckboxModule,
-    MatSliderModule
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

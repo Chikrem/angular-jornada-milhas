@@ -81,7 +81,6 @@ import { PassagemDestaqueComponent } from './shared/passagem-destaque/passagem-d
     PrecosComponent,
     LabelComponent,
     FiltrosComplementaresComponent,
-    PassagemDestaqueComponent,
     PassagemDestaqueComponent
   ],
   imports: [

@@ -37,7 +37,6 @@ export class PassagensService {
       .join('&')
       return query
   }
-
   obterPassagensDestaques(passagem: Passagem[]): Destaques | undefined {
     if (!passagem.length) {
       return undefined;
@@ -61,7 +60,4 @@ export class PassagensService {
 
     return { maisRapida, maisBarata, sugerida };
   }
-
 }
-
-

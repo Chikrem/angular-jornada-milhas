@@ -1,5 +1,3 @@
-![Jornada Milhas](thumbnail.png)
-
 # Jornada Milhas
 
 O Jornada Milhas é uma StartUP. 
@@ -35,8 +33,3 @@ Para abrir e rodar o projeto, execute `npm i` para instalar as dependências e `
 Depois, acesse <a href="http://localhost:4200/">http://localhost:4200/</a> no seu navegador.
 
 O backend utilizado você encontra [aqui](https://github.com/viniciosneves/jornada-milhas-api).
-
-## 📚 Mais informações do curso
-
-O Jornada Milhas é uma StartUP fictícia utilizada nesse curso da Alura.
-A ideia principal desse curso é evoluir ainda mais os conhecimentos em Angular e estilização de componentes.

@@ -13,7 +13,7 @@ export class UnidadeFederativaService {
 
   constructor(
     private http: HttpClient
-  ) { 
+  ) {
   }
 
   listar() : Observable<UnidadeFederativa[]> {

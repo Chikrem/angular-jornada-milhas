@@ -21,14 +21,14 @@ export class CadastroComponent {
 
     if (formCadastro?.valid) {
       const novoCadastro = formCadastro.getRawValue() as PessoaUsuaria;
-      console.log(novoCadastro)
+      console.log(novoCadastro);
       this.cadastroService.cadastrar(novoCadastro).subscribe({
         next: (value) => {
           console.log('Cadastro realizado com sucesso', value);
           this.router.navigate(['auth/login']);
         },
         error: (err) => {
-          console.log('Erro ao realizar cadastro', err)
+          console.log('Erro ao realizar cadastro', err);
         }
       });
     }

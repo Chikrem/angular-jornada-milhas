@@ -16,6 +16,6 @@ export class PromocoesComponent implements OnInit {
       res => {
         this.promocoes = res;
       }
-    )
+    );
   }
 }

@@ -30,8 +30,8 @@ export class ParadasComponent implements OnInit{
       display: "Mais de 2 conexões",
       value: "3"
     },
-  ]
-  conexoesControl: FormControl<number | null>
+  ];
+  conexoesControl: FormControl<number | null>;
 
   constructor(private formBuscaService: FormBuscaService){
     this.conexoesControl = this.formBuscaService.obterControle<number>('conexoes');
@@ -40,10 +40,10 @@ export class ParadasComponent implements OnInit{
     this.conexoesControl.valueChanges.subscribe(
       (value) => {
         if(value === null){
-          this.opcoesSelecionada = null
+          this.opcoesSelecionada = null;
         }
       }
-    )
+    );
   }
 
   alternarParada(opcao: OpcoesDeParada, checked: boolean){
@@ -51,23 +51,23 @@ export class ParadasComponent implements OnInit{
       this.opcoesSelecionada = null;
       this.formBuscaService.formBusca.patchValue({
         conexoes: null
-      })
-      return
+      });
+      return;
     }
-    this.opcoesSelecionada = opcao
+    this.opcoesSelecionada = opcao;
     this.formBuscaService.formBusca.patchValue({
       conexoes: Number(opcao.value)
-    })
+    });
   }
 
   paradaSelecionada(opcao: OpcoesDeParada): boolean{
-    return this.opcoesSelecionada === opcao
+    return this.opcoesSelecionada === opcao;
   }
 
   incluirParada(opcao: OpcoesDeParada){
     if(!this.opcoesSelecionada){
-      return false
+      return false;
     }
-    return this.opcoesSelecionada.value > opcao.value
+    return this.opcoesSelecionada.value > opcao.value;
   }
 }

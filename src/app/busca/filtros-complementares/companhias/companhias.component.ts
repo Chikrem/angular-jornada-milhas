@@ -13,14 +13,14 @@ export class CompanhiasComponent implements OnInit {
   companhias: Companhia[] = [];
   selecionadas: Companhia[] = [];
 
-  companhiasControl: FormControl<number[] | null>
+  companhiasControl: FormControl<number[] | null>;
 
   constructor(
     private companhiaService: CompanhiaService,
     private formBuscaService: FormBuscaService
   ) {
 
-    this.companhiasControl = this.formBuscaService.obterControle<number[] | null>('companhias')
+    this.companhiasControl = this.formBuscaService.obterControle<number[] | null>('companhias');
 
   }
   ngOnInit(): void {
@@ -28,26 +28,26 @@ export class CompanhiasComponent implements OnInit {
       res => {
         this.companhias = res;
       }
-    )
+    );
     this.companhiasControl.valueChanges.subscribe(value => {
       if (!value) {
-        this.selecionadas = []
+        this.selecionadas = [];
       }
-    })
+    });
   }
 
   alternarCompanhia(companhia: Companhia, checked: boolean): void {
     if (!checked) {
-      this.selecionadas = this.selecionadas.filter(comp => comp != companhia)
+      this.selecionadas = this.selecionadas.filter(comp => comp != companhia);
     } else {
-      this.selecionadas.push(companhia)
+      this.selecionadas.push(companhia);
     }
     this.formBuscaService.formBusca.patchValue({
       companhias: this.selecionadas.map(comp => Number(comp.id))
-    })
+    });
   }
   companhiaSelecionada(companhia: Companhia): boolean {
 
-    return this.selecionadas.includes(companhia)
+    return this.selecionadas.includes(companhia);
   }
 }

@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./label.component.scss']
 })
 export class LabelComponent {
-  @Input() texto : string = ''
+  @Input() texto  = '';
 }

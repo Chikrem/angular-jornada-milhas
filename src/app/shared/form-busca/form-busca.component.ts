@@ -16,7 +16,7 @@ export class FormBuscaComponent {
       const formBuscavalue = this.formBuscaService.obterDadosBusca();
       this.realizarBusca.emit(formBuscavalue);
     } else {
-      alert('O formulário precisa ser preenchido')
+      alert('O formulário precisa ser preenchido');
     }
   }
 }

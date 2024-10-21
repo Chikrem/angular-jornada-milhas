@@ -7,7 +7,7 @@ import { Passagem } from 'src/app/core/types/type';
   styleUrls: ['./passagem-destaque.component.scss']
 })
 export class PassagemDestaqueComponent {
-  @Input() destacadaPor: string = ''
+  @Input() destacadaPor = '';
   @Input() passagem?: Passagem;
-  @Input() variant: 'primary' | 'secondary' | 'default'  = 'primary'
+  @Input() variant: 'primary' | 'secondary' | 'default'  = 'primary';
 }

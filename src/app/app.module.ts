@@ -38,7 +38,8 @@ import { ErrosInterceptor } from './core/erro/erros.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: ErrosInterceptor,
       multi: true
-    }
+    },
+
 ],
   bootstrap: [AppComponent]
 })

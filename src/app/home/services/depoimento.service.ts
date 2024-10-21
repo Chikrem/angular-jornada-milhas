@@ -9,14 +9,14 @@ import { environment } from 'src/environments/environment';
 })
 export class DepoimentoService {
 
-  private apiUrl: string = environment.apiUrl
+  private apiUrl: string = environment.apiUrl;
 
   constructor(
     private http: HttpClient
   ) {
   }
 
-  listar() : Observable<Depoimento[]>{
+  listar(): Observable<Depoimento[]>{
     return this.http.get<Depoimento[]>(`${this.apiUrl}/depoimentos`);
   }
 }

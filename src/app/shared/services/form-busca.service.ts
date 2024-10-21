@@ -13,8 +13,8 @@ export class FormBuscaService {
   formBusca: FormGroup;
 
   constructor(private dialog: MatDialog) {
-    const somenteIda = new FormControl(false, [Validators.required])
-    const dataVolta = new FormControl(null, [Validators.required])
+    const somenteIda = new FormControl(false, [Validators.required]);
+    const dataVolta = new FormControl(null, [Validators.required]);
 
     this.formBusca = new FormGroup({
       somenteIda,
@@ -30,21 +30,21 @@ export class FormBuscaService {
       companhias: new FormControl(null),
       precoMin: new FormControl(null),
       precoMax: new FormControl(null),
-    })
+    });
     somenteIda.valueChanges.subscribe(somenteIda => {
       if(somenteIda){
         dataVolta.disable();
-        dataVolta.setValidators(null)
+        dataVolta.setValidators(null);
       }else{
         dataVolta.enable();
-        dataVolta.setValidators([Validators.required])
+        dataVolta.setValidators([Validators.required]);
       }
-      dataVolta.updateValueAndValidity
-    })
+      dataVolta.updateValueAndValidity;
+    });
   }
 
   getDescricaoPassageiros (): string {
-    let descricao = ''
+    let descricao = '';
 
     const adultos = this.formBusca.get('adultos')?.value;
     if (adultos && adultos > 0) {
@@ -61,7 +61,7 @@ export class FormBuscaService {
       descricao += `${descricao ? ', ' : ''}${bebes} bebê${bebes > 1 ? 's' : ''}`;
     }
 
-    return descricao
+    return descricao;
   }
 
   trocarOrigemDestino(): void {
@@ -74,7 +74,7 @@ export class FormBuscaService {
     });
   }
 
-  obterControle<T>(nome:string): FormControl {
+  obterControle<T>(nome: string): FormControl {
     const control = this.formBusca.get(nome);
     if (!control) {
       throw new Error(`FormControl com nome "${nome}" não existe.`);
@@ -95,7 +95,7 @@ export class FormBuscaService {
       origemId: this.obterControle<UnidadeFederativa>('origem').value.id,
       destinoId: this.obterControle<UnidadeFederativa>('destino').value.id,
       tipo: this.obterControle<string>('tipo').value,
-    }
+    };
     const dataVoltaControl = this.obterControle<Date>('dataVolta');
     if (dataVoltaControl.value) {
       dadosBusca.dataVolta = dataVoltaControl.value.toISOString();
@@ -106,35 +106,35 @@ export class FormBuscaService {
     }
     const companhiasControl = this.obterControle<number[]>('companhias');
     if(companhiasControl.value){
-      dadosBusca.companhiasId = companhiasControl.value
+      dadosBusca.companhiasId = companhiasControl.value;
     }
-    const precoMinControl = this.obterControle<number>('precoMin')
+    const precoMinControl = this.obterControle<number>('precoMin');
     if(precoMinControl.value){
-      dadosBusca.precoMin = precoMinControl.value
+      dadosBusca.precoMin = precoMinControl.value;
     }
-    const precoMaxControl = this.obterControle<number>('precoMin')
+    const precoMaxControl = this.obterControle<number>('precoMin');
     if(precoMaxControl.value){
-      dadosBusca.precoMax = precoMaxControl.value
+      dadosBusca.precoMax = precoMaxControl.value;
     }
-    return dadosBusca
+    return dadosBusca;
   }
 
   alterarTipo (evento: MatChipSelectionChange, tipo: string) {
     if (evento.selected) {
       this.formBusca.patchValue({
         tipo,
-      })
-      console.log('Tipo de passagem alterado para: ', tipo)
+      });
+      console.log('Tipo de passagem alterado para: ', tipo);
     }
   }
 
   openDialog() {
     this.dialog.open(ModalComponent, {
       width: '50%'
-    })
+    });
   }
 
   get formEstaValido(){
-    return this.formBusca.valid
+    return this.formBusca.valid;
   }
 }

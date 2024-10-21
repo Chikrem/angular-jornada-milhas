@@ -15,7 +15,7 @@ export class CompanhiaService {
     private httpClient: HttpClient
   ) { }
 
-  listar () : Observable<Companhia[]> {
-    return this.httpClient.get<Companhia[]>(`${this.apiUrl}/companhias`)
+  listar(): Observable<Companhia[]> {
+    return this.httpClient.get<Companhia[]>(`${this.apiUrl}/companhias`);
   }
 }
